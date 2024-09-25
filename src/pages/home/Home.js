@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { point } from "../../GlobalStyled";
 import { Link } from "react-router-dom";
+import { Loading } from "../../components/Loading";
+import { useState } from "react";
 
 const Container = styled.div`
   max-width: 500px;
