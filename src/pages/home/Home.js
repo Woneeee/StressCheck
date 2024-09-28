@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import { point } from "../../GlobalStyled";
 import { Link } from "react-router-dom";
-import { Loading } from "../../components/Loading";
-import { useState } from "react";
 
 const Container = styled.div`
   max-width: 500px;
@@ -43,7 +41,7 @@ const StartBtn = styled.div`
   padding: 19px;
   border-radius: 30px;
   color: white;
-  margin: 55px auto;
+  margin: 40px auto;
 `;
 
 export const Home = () => {
