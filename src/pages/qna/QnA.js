@@ -37,6 +37,13 @@ const Bar = styled.div`
   margin-top: 8px;
 `;
 
+const Current = styled.div`
+  height: 100%;
+  background-color: ${point.color};
+  border-radius: 20px;
+  transition-duration: 0.4s;
+`;
+
 const Question = styled.div`
   h2 {
     font-size: 32px;
@@ -48,7 +55,7 @@ const Question = styled.div`
   h4 {
     margin-top: 60px;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
   }
 `;
 
@@ -113,12 +120,16 @@ export const QnA = () => {
       <Title titleName="QnA" />
       <Container>
         <Progress>
-          <Page>1/13</Page>
-          <Bar />
+          <Page>
+            {page} / {questions.length}
+          </Page>
+          <Bar>
+            <Current style={{ width: `${gauge}%` }} />
+          </Bar>
         </Progress>
 
         <Question>
-          <h2>Q1.</h2>
+          <h2>Q{page}.</h2>
           <h4>질문</h4>
         </Question>
 
