@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { routes } from "../routes";
 
 const Container = styled.div`
   max-width: 500px;
@@ -17,7 +19,9 @@ const Container = styled.div`
 export const Header = () => {
   return (
     <Container>
-      <h2>Stress Check</h2>
+      <Link to={routes.home}>
+        <h2>Stress Check</h2>
+      </Link>
     </Container>
   );
 };

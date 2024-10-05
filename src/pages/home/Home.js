@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Title } from "../../components/Title";
 
 const Container = styled.div`
-  max-width: 500px;
+  max-width: 450px;
   width: 100%;
   height: 100vh;
   margin: 0 auto;
