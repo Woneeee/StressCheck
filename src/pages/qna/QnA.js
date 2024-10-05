@@ -3,6 +3,7 @@ import { useScrollTop } from "../../lib/useScrollTop";
 import { questions } from "../../components/questions";
 import { useNavigate } from "react-router-dom";
 import { routes } from "../../routes";
+import { Title } from "../../components/Title";
 
 export const QnA = () => {
   useScrollTop();
@@ -28,5 +29,9 @@ export const QnA = () => {
     }
   }, [page, navi, qIndex, scores]);
 
-  return <div>QnA</div>;
+  return (
+    <>
+      <Title titleName="QnA" />
+    </>
+  );
 };

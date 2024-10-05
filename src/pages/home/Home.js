@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { point } from "../../GlobalStyled";
 import { Link } from "react-router-dom";
+import { Title } from "../../components/Title";
 
 const Container = styled.div`
   max-width: 500px;
@@ -10,7 +11,7 @@ const Container = styled.div`
   padding-top: 190px;
 `;
 
-const Title = styled.div`
+const STitle = styled.div`
   text-align: center;
   h2 {
     font-size: 28px;
@@ -46,20 +47,23 @@ const StartBtn = styled.div`
 
 export const Home = () => {
   return (
-    <Container>
-      <Title>
-        <h2>스트레스 지수 테스트</h2>
-        <p>13개의 질문으로 알아보는</p>
-        <p>지금 내 스트레스 레벨</p>
-      </Title>
+    <>
+      <Title titleName="Home" />
+      <Container>
+        <STitle>
+          <h2>스트레스 지수 테스트</h2>
+          <p>13개의 질문으로 알아보는</p>
+          <p>지금 내 스트레스 레벨</p>
+        </STitle>
 
-      <MainBanner />
+        <MainBanner />
 
-      <Link to={"/qna"}>
-        <StartBtn>
-          <h3>테스트 시작하기!</h3>
-        </StartBtn>
-      </Link>
-    </Container>
+        <Link to={"/qna"}>
+          <StartBtn>
+            <h3>테스트 시작하기!</h3>
+          </StartBtn>
+        </Link>
+      </Container>
+    </>
   );
 };
