@@ -64,7 +64,7 @@ const Answer = styled.div`
   width: 100%;
 `;
 
-const Yes = styled.div`
+const Button = styled.div`
   width: 100%;
   height: 55px;
   background-color: ${point.color2};
@@ -75,20 +75,12 @@ const Yes = styled.div`
   color: white;
   box-shadow: ${point.color} 0px 5px 20px;
   cursor: pointer;
-`;
-
-const No = styled.div`
-  width: 100%;
-  height: 55px;
-  background-color: ${point.color2};
   margin-top: 60px;
-  border-radius: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  box-shadow: ${point.color} 0px 5px 20px;
-  cursor: pointer;
+  transition-duration: 0.3s;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
 `;
 
 export const QnA = () => {
@@ -130,12 +122,15 @@ export const QnA = () => {
 
         <Question>
           <h2>Q{page}.</h2>
-          <h4>질문</h4>
+          <h4>{questions[qIndex].q}</h4>
         </Question>
 
         <Answer>
-          <Yes onClick={handleAnswer}>그렇다</Yes>
-          <No onClick={handleAnswer}>아니다</No>
+          {questions[qIndex].a.map((answer, index) => (
+            <Button key={index} onClick={() => handleAnswer(answer.score)}>
+              {answer.text}
+            </Button>
+          ))}
         </Answer>
       </Container>
     </>

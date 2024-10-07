@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { point } from "../GlobalStyled";
 
 const Container = styled.div`
-  max-width: 500px;
-  width: 500px;
+  max-width: 450px;
+  width: 100%;
   font-size: 20px;
   font-weight: 600;
   margin: 0 auto;

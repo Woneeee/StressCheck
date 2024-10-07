@@ -43,6 +43,11 @@ const StartBtn = styled.div`
   border-radius: 30px;
   color: white;
   margin: 40px auto;
+  transition-duration: 0.3s;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
 `;
 
 export const Home = () => {
