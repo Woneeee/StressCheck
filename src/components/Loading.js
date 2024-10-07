@@ -10,9 +10,8 @@ const Container = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-
   p {
-    margin-top: 12px;
+    margin-top: 15px;
   }
 `;
 
