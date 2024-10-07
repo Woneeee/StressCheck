@@ -7,6 +7,7 @@ import styled from "styled-components";
 import { point } from "../../GlobalStyled";
 import { VscDebugRestart, VscDebugRestartFrame } from "react-icons/vsc";
 import { routes } from "../../routes";
+import { Loading } from "../../components/Loading";
 
 const Container = styled.div`
   max-width: 450px;
@@ -24,7 +25,8 @@ const Bg = styled.div`
   h2 {
     color: white;
     font-size: 40px;
-    font-weight: 500;
+    font-weight: 700;
+    letter-spacing: 0;
   }
 `;
 
@@ -52,6 +54,9 @@ const StressLevel = styled.div`
   }
   p {
     margin-top: 45px;
+    line-height: 25px;
+    font-size: 17px;
+    word-break: keep-all;
   }
 `;
 
@@ -77,9 +82,13 @@ const ReStart = styled.div`
 export const Result = () => {
   useScrollTop();
   const [isLoading, setIsLoading] = useState(true);
-  const [resultIndex, setResultIndex] = useState();
+  const [resultIndex, setResultIndex] = useState(0);
   const { state } = useLocation();
   const { scores } = state;
+
+  setTimeout(() => {
+    setIsLoading(false);
+  }, 3000);
 
   const totalScore = scores.reduce((acc, curr) => acc + curr);
 
@@ -96,24 +105,29 @@ export const Result = () => {
   return (
     <>
       <Title titleName={"Result"} />
-      <Container>
-        <Bg>
-          <h2>점수</h2>
-        </Bg>
 
-        <StressLevel>
-          <h4>지금 당신의 스트레스 레벨은</h4>
-          <h2>매우 높음</h2>
-          <p>본문</p>
-        </StressLevel>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <Container>
+          <Bg>
+            <h2>{stressResult[resultIndex].level}</h2>
+          </Bg>
 
-        <Link to={routes.home}>
-          <ReStart>
-            <VscDebugRestart />
-            &nbsp;&nbsp;&nbsp;&nbsp; 테스트 다시하기
-          </ReStart>
-        </Link>
-      </Container>
+          <StressLevel>
+            <h4>지금 당신의 스트레스 레벨은</h4>
+            <h2>{stressResult[resultIndex].title}</h2>
+            <p>{stressResult[resultIndex].desc}</p>
+          </StressLevel>
+
+          <Link to={routes.home}>
+            <ReStart>
+              <VscDebugRestart />
+              &nbsp;&nbsp;&nbsp;&nbsp; 테스트 다시하기
+            </ReStart>
+          </Link>
+        </Container>
+      )}
     </>
   );
 };

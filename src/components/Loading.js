@@ -8,12 +8,19 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  p {
+    margin-top: 12px;
+  }
 `;
 
 export const Loading = () => {
   return (
     <Container>
-      <HashLoader size={60} color={point.color} />
+      <HashLoader size={50} color={point.color} />
+      <p>결과분석중</p>
     </Container>
   );
 };
