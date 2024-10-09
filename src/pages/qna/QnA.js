@@ -49,18 +49,18 @@ const Question = styled.div`
     font-size: 32px;
     font-weight: 500;
     color: ${point.color2};
-    margin-top: 40px;
+    margin-top: 80px;
     text-align: center;
   }
   h4 {
-    margin-top: 60px;
+    margin-top: 70px;
     text-align: center;
     font-size: 18px;
   }
 `;
 
 const Answer = styled.div`
-  margin-top: 90px;
+  margin-top: 120px;
   width: 100%;
 `;
 
@@ -75,7 +75,7 @@ const Button = styled.div`
   color: white;
   box-shadow: ${point.color} 0px 5px 20px;
   cursor: pointer;
-  margin-top: 60px;
+  margin-top: 80px;
   transition-duration: 0.3s;
 
   &:hover {

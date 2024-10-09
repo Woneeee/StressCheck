@@ -15,11 +15,11 @@ const Container = styled.div`
   }
 `;
 
-export const Loading = () => {
+export const HomeLoading = () => {
   return (
     <Container>
       <ClipLoader size={50} color={point.color} />
-      <p>결과분석중</p>
+      <p>Loading</p>
     </Container>
   );
 };

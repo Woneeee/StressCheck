@@ -12,6 +12,7 @@ import { Loading } from "../../components/Loading";
 const Container = styled.div`
   max-width: 450px;
   width: 100%;
+  height: 100vh;
   margin: 0 auto;
 `;
 
@@ -38,6 +39,7 @@ const StressLevel = styled.div`
   border-radius: 20px;
   padding: 20px 30px;
   margin: 0 auto;
+  transform: translateY(-50px);
 
   h4 {
     font-size: 19px;
@@ -70,7 +72,7 @@ const ReStart = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 40px auto;
+  margin: 20px auto;
   cursor: pointer;
   transition-duration: 0.3s;
 

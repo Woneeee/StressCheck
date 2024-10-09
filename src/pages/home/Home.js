@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { point } from "../../GlobalStyled";
 import { Link } from "react-router-dom";
 import { Title } from "../../components/Title";
+import { useState } from "react";
+import { HomeLoading } from "../../components/HomeLoading";
 
 const Container = styled.div`
   max-width: 450px;
@@ -51,24 +53,35 @@ const StartBtn = styled.div`
 `;
 
 export const Home = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  setTimeout(() => {
+    setIsLoading(false);
+  }, 1000);
+
   return (
     <>
       <Title titleName="Home" />
-      <Container>
-        <STitle>
-          <h2>스트레스 지수 테스트</h2>
-          <p>13개의 질문으로 알아보는</p>
-          <p>지금 내 스트레스 레벨</p>
-        </STitle>
 
-        <MainBanner />
+      {isLoading ? (
+        <HomeLoading />
+      ) : (
+        <Container>
+          <STitle>
+            <h2>스트레스 지수 테스트</h2>
+            <p>13개의 질문으로 알아보는</p>
+            <p>지금 내 스트레스 레벨</p>
+          </STitle>
 
-        <Link to={"/qna"}>
-          <StartBtn>
-            <h3>테스트 시작하기!</h3>
-          </StartBtn>
-        </Link>
-      </Container>
+          <MainBanner />
+
+          <Link to={"/qna"}>
+            <StartBtn>
+              <h3>테스트 시작하기!</h3>
+            </StartBtn>
+          </Link>
+        </Container>
+      )}
     </>
   );
 };
