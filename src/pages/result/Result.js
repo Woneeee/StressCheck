@@ -24,6 +24,11 @@ const Container = styled.div`
       transform: translateY(0);
     }
   }
+
+  @media screen and (max-width: 510px) {
+    max-width: 350px;
+    width: 100%;
+  }
 `;
 
 const Bg = styled.div`
@@ -43,6 +48,10 @@ const Bg = styled.div`
     font-size: 40px;
     font-weight: 700;
     letter-spacing: 0;
+  }
+
+  @media screen and (max-width: 510px) {
+    height: 300px;
   }
 `;
 
@@ -75,6 +84,19 @@ const StressLevel = styled.div`
     font-size: 17px;
     word-break: keep-all;
   }
+
+  @media screen and (max-width: 510px) {
+    height: 350px;
+    h4 {
+      font-size: 17px;
+    }
+    h2 {
+      font-size: 22px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
 `;
 
 const ReStart = styled.div`
@@ -93,6 +115,10 @@ const ReStart = styled.div`
 
   &:hover {
     transform: translateY(-4px);
+  }
+
+  @media screen and (max-width: 510px) {
+    margin: 0 auto;
   }
 `;
 

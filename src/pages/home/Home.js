@@ -11,6 +11,12 @@ const Container = styled.div`
   height: 100vh;
   margin: 0 auto;
   padding-top: 190px;
+
+  @media screen and (max-width: 510px) {
+    max-width: 350px;
+    width: 100%;
+    padding-top: 70px;
+  }
 `;
 
 const STitle = styled.div`
@@ -33,6 +39,10 @@ const MainBanner = styled.div`
   border-radius: 20px;
   background: url("https://doda-static.com/img/900/80/1/1/1646881105424-0658139.jpg")
     no-repeat center / cover;
+
+  @media screen and (max-width: 510px) {
+    height: 200px;
+  }
 `;
 
 const StartBtn = styled.div`

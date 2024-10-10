@@ -25,6 +25,12 @@ const Container = styled.div`
       transform: translateX(0);
     }
   }
+
+  @media screen and (max-width: 510px) {
+    max-width: 350px;
+    width: 100%;
+    padding-top: 70px;
+  }
 `;
 
 const Progress = styled.div`
@@ -47,6 +53,9 @@ const Bar = styled.div`
   opacity: 0.4;
   border-radius: 20px;
   margin-top: 8px;
+  @media screen and (max-width: 510px) {
+    height: 16px;
+  }
 `;
 
 const Current = styled.div`
@@ -69,11 +78,26 @@ const Question = styled.div`
     text-align: center;
     font-size: 18px;
   }
+
+  @media screen and (max-width: 510px) {
+    h2 {
+      margin-top: 60px;
+      font-size: 30px;
+    }
+    h4 {
+      margin-top: 50px;
+      font-size: 17px;
+    }
+  }
 `;
 
 const Answer = styled.div`
   margin-top: 120px;
   width: 100%;
+
+  @media screen and (max-width: 510px) {
+    margin-top: 90px;
+  }
 `;
 
 const Button = styled.div`
@@ -92,6 +116,10 @@ const Button = styled.div`
 
   &:hover {
     transform: translateY(-4px);
+  }
+
+  @media screen and (max-width: 510px) {
+    margin-top: 60px;
   }
 `;
 
