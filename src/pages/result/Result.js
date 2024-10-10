@@ -14,6 +14,16 @@ const Container = styled.div`
   width: 100%;
   height: 100vh;
   margin: 0 auto;
+  animation: showResult 1s;
+
+  @keyframes showResult {
+    0% {
+      transform: translateY(700px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 `;
 
 const Bg = styled.div`
@@ -22,7 +32,12 @@ const Bg = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${point.color};
+  background: linear-gradient(
+    180deg,
+    rgba(168, 193, 255, 1) 0%,
+    rgba(168, 193, 255, 1) 79%,
+    rgba(255, 255, 255, 1) 100%
+  );
   h2 {
     color: white;
     font-size: 40px;

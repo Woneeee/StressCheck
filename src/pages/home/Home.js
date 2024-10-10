@@ -37,11 +37,13 @@ const MainBanner = styled.div`
 
 const StartBtn = styled.div`
   width: 80%;
+  height: 55px;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
   background-color: ${point.color2};
-  text-align: center;
-  padding: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 30px;
   color: white;
   margin: 40px auto;

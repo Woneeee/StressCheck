@@ -13,6 +13,18 @@ const Container = styled.div`
   height: 100vh;
   margin: 0 auto;
   padding-top: 120px;
+  animation: ani 1s;
+
+  @keyframes ani {
+    0% {
+      opacity: 0;
+      transform: translateX(500px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 `;
 
 const Progress = styled.div`
@@ -39,7 +51,7 @@ const Bar = styled.div`
 
 const Current = styled.div`
   height: 100%;
-  background-color: ${point.color};
+  background-color: ${point.color2};
   border-radius: 20px;
   transition-duration: 0.4s;
 `;
@@ -102,6 +114,7 @@ export const QnA = () => {
   useEffect(() => {
     const progress = (page / questions.length) * 100;
     setGauge(progress);
+
     if (qIndex === questions.length - 1 && scores.length === questions.length) {
       navi(routes.result, { state: { scores } });
     }
@@ -126,9 +139,9 @@ export const QnA = () => {
         </Question>
 
         <Answer>
-          {questions[qIndex].a.map((answer, index) => (
-            <Button key={index} onClick={() => handleAnswer(answer.score)}>
-              {answer.text}
+          {questions[qIndex].a.map((ans, index) => (
+            <Button key={index} onClick={() => handleAnswer(ans.score)}>
+              {ans.text}
             </Button>
           ))}
         </Answer>
