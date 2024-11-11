@@ -39,9 +39,9 @@
 
 - 모바일 이미지
 <div display="flex" >
-    <img src="../stress_check/src/mo_stressCheck/main.jpg" />
-    <img src="../stress_check/src/mo_stressCheck/qna.jpg" />
-    <img src="../stress_check/src/mo_stressCheck/result.jpg" />
+    <img src="../stress_check/src/mo_stressCheck/main.jpg" width="180px" />
+    <img src="../stress_check/src/mo_stressCheck/qna.jpg" width="180px" />
+    <img src="../stress_check/src/mo_stressCheck/result.jpg" width="180px" />
 </div>
 
 ## 프로젝트를 하며 느낀점
