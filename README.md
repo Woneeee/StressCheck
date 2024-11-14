@@ -60,11 +60,15 @@
 
 2. 답변은 선택할때마다 그에 해당하는 스코어가 저장되게 하기위해 클릭이벤트에 함수를 선언하여 스코어값 인자를 넣었습니다. 그리고 미리만들어두었던 const [scores, setScores] = useState([]) 가 있었고 함수가 호출될때마다 setScores([...scores, score]) 로 scores 값을 갱신시켜줄 수 있었습니다. 그리고 useNavigate를 사용해 결과페이지로 이동시킬때 state를 사용하여 scores 데이터를 넘겨주었습니다.
 
-3. 마지막으로 결과페이지에서 배열에 저장된 scores 점수를 합산하기 위해 reduce 함수를 새롭게 사용하게 되었고 콜백함수에 accumulator, currentValue 인자를 활용해 점수를 합산할 수 있었습니다.
+3. 마지막으로 결과페이지에서 useLocation 을 통해 앞서 useNavigate state 값을 저장한 것을 받아올 수 있었습니다. 또한 그렇게 받아온 배열에 저장된 scores 점수를 합산하기 위해 reduce 함수를 새롭게 사용하게 되었고 콜백함수에 accumulator, currentValue 인자를 활용해 점수를 합산할 수 있었습니다.
 
 ## 프로젝트를 하면서 알게된 내용
 
-- 먼저 'onClick' Event 실행할때
+- 먼저 'onClick' Event 를 사용하는 상황에서 콜백함수에 인자를 넘겨줘야 할 때는 그냥 함수를 호출하는 것이 아니라, 함수를 선언해주는 방식을 사용해야한다는 것을 알게 되었습니다.
+
+- 또한 useNavigate를 통해 이동한 경로로 state 값을 넘길 수 있고 useLocation 을 통해 다시 state 값을 받아 올 수 있다는 것을 알게되었습니다.
+
+- 마지막으로
 
 ## 프로젝트 진행중 칭찬 및 반성
 
